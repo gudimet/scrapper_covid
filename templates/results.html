@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Review Page</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+      <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+</head>
+
+<body>
+
+  <div class="table-users">
+   <div class="header">Listings</div>
+
+   <table cellspacing="0">
+      <tr>
+         <th>Country</th>
+         <th>TotalCases</th>
+         <th>TotalDeaths</th>
+         <th>TotalRecovered</th>
+          <th>searchString</th>
+      </tr>
+         {% for review in reviews %}
+      <tr>
+         <td>{{review['Country']}}</td>
+         <td>{{review['Coronavirus Cases']}}</td>
+         <td>{{review['Deaths']}}</td>
+         <td>{{review['Recovered']}}</td>
+         <td>{{review['searchString']}}</td>
+      {% endfor %}
+   </table>
+</div>
+
+
+
+</body>
+
+</html>
